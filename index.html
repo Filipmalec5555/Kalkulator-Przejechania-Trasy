@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Kosztów Przejazdu i Średniego Spalania</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Kosztów Przejazdu i Średniego Spalania</h1>
+        <div class="calculators">
+            <div class="calculator">
+                <h2>Koszt Przejazdu</h2>
+                <form id="costForm">
+                    <label for="distance">Dystans (km):</label>
+                    <input type="number" id="distance" required>
+                    <label for="fuelPrice">Cena paliwa (zł/l):</label>
+                    <input type="number" id="fuelPrice" step="0.01" required>
+                    <label for="fuelConsumption">Średnie spalanie (l/100 km):</label>
+                    <input type="number" id="fuelConsumption" step="0.1" required>
+                    <button type="button" onclick="calculateCost()">Oblicz koszt</button>
+                </form>
+                <p id="resultCost"></p>
+            </div>
+            <div class="calculator">
+                <h2>Kalkulator Średniego Spalania na 100 km</h2>
+                <form id="averageConsumptionForm">
+                    <label for="fuelUsed">Spalone paliwo (l):</label>
+                    <input type="number" id="fuelUsed" step="0.1" required>
+                    <label for="distanceTravelled">Ilość przejechanych kilometrów (km):</label>
+                    <input type="number" id="distanceTravelled" required>
+                    <label for="fuelPriceOptional">Cena paliwa (zł/l) (opcjonalne):</label>
+                    <input type="number" id="fuelPriceOptional" step="0.01">
+                    <button type="button" onclick="calculateAverageConsumption()">Oblicz średnie spalanie</button>
+                </form>
+                <p id="resultAverageConsumption"></p>
+            </div>
+            <div class="calculator">
+                <h2>Podział Kosztów</h2>
+                <form id="splitCostForm">
+                    <label for="totalCost">Całkowity koszt przejazdu (zł):</label>
+                    <input type="number" id="totalCost" step="0.01" required>
+                    <label for="passengers">Ilość pasażerów:</label>
+                    <input type="number" id="passengers" required>
+                    <button type="button" onclick="calculateSplitCost()">Oblicz podział kosztów</button>
+                </form>
+                <p id="resultSplitCost"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
